@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Postcard</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffd6e7, #d9e8ff);
+}
+
+.card {
+  width: 90%;
+  max-width: 380px;
+  background: white;
+  padding: 30px 22px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+}
+
+.heart {
+  font-size: 65px;
+  animation: beat 1s infinite;
+}
+
+h1 {
+  color: #ff4f81;
+}
+
+p {
+  color: #555;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+button {
+  border: none;
+  padding: 13px 25px;
+  margin: 8px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.yes {
+  background: #ff4f81;
+  color: white;
+}
+
+.no {
+  background: #eee;
+  color: #333;
+}
+
+#message {
+  display: none;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #ff4f81;
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="heart">💌</div>
+
+  <h1>Hello 👋</h1>
+
+  <p>
+    ဒီကတ်လေးကို မင်းအတွက် လုပ်ထားတာပါ။
+    <br>
+    ဖွင့်ကြည့်ပေးလို့ ကျေးဇူးပါ ❤️
+  </p>
+
+  <button class="yes" onclick="showMessage()">
+    Open 💖
+  </button>
+
+  <button class="no" onclick="changeText()">
+    Again 😆
+  </button>
+
+  <div id="message">
+    Surprise! 🎉<br>
+    Have a wonderful day ❤️
+  </div>
+
+</div>
+
+<script>
+function showMessage() {
+  document.getElementById("message").style.display = "block";
+}
+
+function changeText() {
+  document.querySelector("h1").innerText = "You came back! 😆";
+}
+</script>
+
+</body>
+</html>
